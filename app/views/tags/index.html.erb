@@ -1,9 +1,9 @@
 <h1>All Tags</h1>
 
-<ul id="tags">
+<table id="tags">
   <% @tags.each do |tag| %>
-    <li>
-      <%= link_to tag.name, tag_path(tag) %>
-    </li>
+    <tr>
+      <td><%= link_to tag.name, tag_path(tag) %></td><td><%= link_to 'Delete', tag_path(tag), method: :delete, data: {confirm: "Really delete this tag?"} %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
